@@ -1,6 +1,6 @@
 # Nuxt Auth Strapi Example
 
-> This is an Strapi example project using [nuxt-auth](https://github.com/sidebase/nuxt-auth), the Nuxt3 authentication package built on [NextAuth](https://github.com/nextauthjs/next-auth).
+> This is an Nuxt3 - Strapi example project using [nuxt-auth](https://github.com/sidebase/nuxt-auth), the Nuxt3 authentication package built on [NextAuth](https://github.com/nextauthjs/next-auth).
 
 
 ## Setup
