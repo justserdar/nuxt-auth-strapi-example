@@ -683,14 +683,13 @@
     estree-walker "^2.0.2"
     picomatch "^2.3.1"
 
-"@sidebase/nuxt-auth@^0.0.1-beta.4":
-  version "0.0.1-beta.7"
-  resolved "https://registry.yarnpkg.com/@sidebase/nuxt-auth/-/nuxt-auth-0.0.1-beta.7.tgz#d9eed70c3fce3f5200486cc549e9d3abf4a40c69"
-  integrity sha512-/5+ttaXOr5Abku0A8KwiRZAICUz+1a99tiAvPH9mrVDx0XNulb405PQ16LCpnrc3aKcQ7YTWAOrd0DuLJs/+hQ==
+"@sidebase/nuxt-auth@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@sidebase/nuxt-auth/-/nuxt-auth-0.1.0.tgz#5abe4eedcc113c67c5c86dfce836bd942772d968"
+  integrity sha512-hGwiApkQXMlFBdRH8/XM+r6I/pM8SrJIYvILydxaJc84cIy2sjGNJMzY6iybUJ1yDYhQBQpPReOEjlgN98+iuA==
   dependencies:
     "@nuxt/kit" "^3.0.0-rc.12"
     defu "^6.1.0"
-    nanoid "^4.0.0"
     next-auth "^4.14.0"
     ufo "^0.8.6"
 

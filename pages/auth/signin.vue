@@ -12,6 +12,8 @@ let credentials = reactive({
   csrfToken: crsf.csrfToken
 });
 
+console.log(credentials.crsfToken)
+
 </script>
 
 
@@ -38,7 +40,7 @@ let credentials = reactive({
 
 
 
-          <button class="bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300" @click="signIn('credentials', { callbackUrl: '/protected/globally', username: credentials.username, password: credentials.password})">
+          <button class="bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300" @click="signIn('credentials', { callbackUrl: '/protected/globally', username: credentials.username, password: credentials.password })">
             Sign in (Credential Flow)
           </button>
 
