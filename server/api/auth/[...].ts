@@ -17,8 +17,6 @@ export default NuxtAuthHandler({
         username: { label: "Username", type: "text", placeholder: "Test user" },
         password: { label: "Password", type: "password" },
       },
-      signinUrl: "http://localhost:3000/auth/signin/credentials",
-      callbackUrl: "http://localhost:3000/api/auth/callback/credentials",
       async authorize(credentials: any) {
         
         const user = await $fetch(
@@ -54,5 +52,8 @@ export default NuxtAuthHandler({
   ],
   session: {
     jwt: true,
-  }
+  },
+  pages: {
+    signIn: '/auth/signin',
+  },
 });
