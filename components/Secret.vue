@@ -36,8 +36,3 @@ const { data, pending, error, refresh } = await useFetch(`/api/admin/data`, { he
   </div>
 </template>
 
-<style scoped>
-a {
-  @apply text-green-600 underline hover:text-green-500;
-}
-</style>

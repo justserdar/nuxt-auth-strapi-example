@@ -5,7 +5,6 @@ export default defineEventHandler(async (event) => {
   if (!session) return { status: "unauthenticated!" };
 
   const config = useRuntimeConfig();
-
   const token = await getToken({ event });
   const query = await useQuery(event);
 
@@ -13,6 +12,7 @@ export default defineEventHandler(async (event) => {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
+      // Ensure that the JWT tokens are encoded, when you are passing it around.
       Authorization: "Bearer " + token.email,
     },
   };
