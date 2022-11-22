@@ -1,22 +1,23 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import { NuxtAuthHandler } from "#auth";
+const config = useRuntimeConfig()
 
 export default NuxtAuthHandler({
   // secret needed to run nuxt-auth in production mode (used to encrypt data)
-  secret: process.env.NUXT_SECRET,
+  secret: config.NUXT_SECRET,
   providers: [
     // @ts-ignore Import is exported on .default during SSR, so we need to call it this way. May be fixed via Vite at some point
     CredentialsProvider.default({
-      // The name to display on the sign in form (e.g. 'Sign in with...')
       name: "Credentials",
       credentials: {
-        username: { label: "Username", type: "text", placeholder: "Test user" },
-        password: { label: "Password", type: "password" },
+        // username: { label: "Username", type: "text", placeholder: "Username or email account" },
+        // password: { label: "Password", type: "password" },
       },
       async authorize(credentials: any) {
-        
-        const user = await $fetch(
-          `${process.env.STRAPI_BASE_URL}/api/auth/local/`,
+
+        console.log(credentials)
+        const response = await $fetch(
+          `${config.STRAPI_BASE_URL}/api/auth/local/`,
           {
             method: "POST",
             body: JSON.stringify({
@@ -26,26 +27,25 @@ export default NuxtAuthHandler({
           }
         );
 
-        if (user) {
-
+        if (response.user) {
           const u = {
-            id: user.id,
-            name: user.user.username,
+            id: response.id,
+            name: response.user.username,
+            email: response.jwt,
             // Passing OG JWT through the email field.
-            email: user.jwt
+            profile: response.jwt
           };
-
           return u;
         } else {
-          // If you return null then an error will be displayed advising the user to check their details.
-          return null;
-
-          // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
+          throw new Error('User not found');
         }
       },
     }),
   ],
   session: {
-    jwt: true,
-  }
+    strategy: 'jwt',
+  },
+  pages: {
+    signIn: '/auth/signin'
+  },
 });

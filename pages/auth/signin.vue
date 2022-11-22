@@ -7,8 +7,13 @@ const crsf = await getCsrfToken()
 let credentials = reactive({
   username: "",
   password: "",
-  csrfToken: crsf.csrfToken
 });
+
+const login = async (e) => {
+  e.preventDefault()
+  const response = await signIn('credentials', { callbackUrl: '/protected/globally', redirect: true, username: loginForm.username, password: loginForm.password } )
+  console.log(response)
+};
 </script>
 
 <template>
@@ -35,7 +40,7 @@ let credentials = reactive({
             </svg>
           </div>
           <button class="bg-[#002D74] rounded-xl text-white py-2 hover:scale-105 duration-300"
-            @click="signIn('credentials', { callbackUrl: '/protected/globally', username: credentials.username, password: credentials.password })">
+            @click="login">
             Sign in (Credential Flow)
           </button>
         </form>
