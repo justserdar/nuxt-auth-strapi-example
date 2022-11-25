@@ -25,9 +25,7 @@ node .output/server/index.mjs
 
 The test deployment is done via docker-compose with `nginx-certbot` image which automatically issues certificate for the domain. Please don't forget to create `.env` file in the project root, which will contain:
 
-- `GITHUB_CLIENT_*`
-  - `GITHUB_CLIENT_ID` - A [GitHub OAuth]'https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app' Client Id
-  - `GITHUB_CLIENT_SECRET` - A [GitHub OAuth]https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app' secret
+
 - `NUXT_SECRET` - A random string used to generate authentication tokens
 - `ORIGIN` - The URL of your authentication api (should be https://example.com, this no trailing slash)
 - `STRAPI_BASE_URL` - The dev or production URL of your Strapi server.
