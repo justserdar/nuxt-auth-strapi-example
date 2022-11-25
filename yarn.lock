@@ -685,15 +685,15 @@
     estree-walker "^2.0.2"
     picomatch "^2.3.1"
 
-"@sidebase/nuxt-auth@^0.1.2":
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/@sidebase/nuxt-auth/-/nuxt-auth-0.1.2.tgz#e79130a92fb8feba7d824140e392da49586e2cdd"
-  integrity sha512-y87qoKh8P4FAaURB/SkG6ilYf+m2NpqqEvTQ5eouSKnRPQURTA6fw0fCHzHnzyLrtoCmuz8TFvDfAaAB2EusiQ==
+"@sidebase/nuxt-auth@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@sidebase/nuxt-auth/-/nuxt-auth-0.2.0.tgz#a92ec256db5742a6cc101aba2551e2fd6c3d8e6a"
+  integrity sha512-6t7XSGBrpH6k2lWy5kWfXfS6L5jgWWolDzLD9g7Y5G2sbMAjigyCRunaRTKZ2XFiGW3TJODlPaxV3OcPX54HsQ==
   dependencies:
     "@nuxt/kit" "^3.0.0-rc.12"
     defu "^6.1.0"
     next-auth "^4.14.0"
-    ufo "^0.8.6"
+    ufo "^1.0.0"
 
 "@trysound/sax@0.2.0":
   version "0.2.0"
