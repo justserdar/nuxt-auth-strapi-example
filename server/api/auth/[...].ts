@@ -15,7 +15,6 @@ export default NuxtAuthHandler({
       },
       async authorize(credentials: any) {
 
-        console.log(credentials)
         const response = await $fetch(
           `${config.STRAPI_BASE_URL}/api/auth/local/`,
           {
@@ -42,9 +41,6 @@ export default NuxtAuthHandler({
       },
     }),
   ],
-  session: {
-    strategy: 'jwt',
-  },
   pages: {
     signIn: '/auth/signin'
   },

@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
 
   const config = useRuntimeConfig();
   const token = await getToken({ event });
-  const query = await useQuery(event);
+  const query = await getQuery(event);
 
   const settings = {
     method: "GET",

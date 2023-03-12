@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     STRAPI_APITOKEN_SECRET:process.env.STRAPI_APITOKEN_SECRET
   },
   css: ["@fortawesome/fontawesome-free/css/all.min.css"],
-  modules: ["@nuxtjs/tailwindcss", "@sidebase/nuxt-auth"],
+  modules: ['@nuxt/devtools', "@nuxtjs/tailwindcss", "@sidebase/nuxt-auth"],
   auth: {
     origin: process.env.ORIGIN,
   },
