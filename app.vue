@@ -6,12 +6,9 @@
 </template>
 
 <script setup lang="ts">
-import { useSession } from '#imports'
-
 import Navbar from "~/components/Navbar.vue";
-import {useHead} from "#head";
 import Welcome from "~/components/Welcome.vue";
-const { data, status, signOut, signIn } = await useSession({ required: false })
+const { data, status, signOut, signIn } = await useAuth({ required: false })
 
 useHead({
   title: '🔐 nuxt-auth-strapi-example',

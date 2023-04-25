@@ -22,8 +22,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useSession } from '#imports'
-const { data, status, getCsrfToken, getProviders, signOut } = await useSession({ required: false })
+const { data, status, getCsrfToken, getProviders, signOut } = await useAuth({ required: false })
 const providers = await getProviders()
 const csrfToken = await getCsrfToken()
 </script>

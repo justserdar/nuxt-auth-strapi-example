@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { useSession } from '#imports'
-const { signIn, data, status, getCsrfToken, getProviders } = await useSession({ required: false })
+const { signIn, data, status, getCsrfToken, getProviders } = await useAuth({ required: false })
 const providers = await getProviders()
 const crsf = await getCsrfToken()
 

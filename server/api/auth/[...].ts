@@ -1,10 +1,9 @@
 import CredentialsProvider from "next-auth/providers/credentials";
 import { NuxtAuthHandler } from "#auth";
-const config = useRuntimeConfig()
 
 export default NuxtAuthHandler({
   // secret needed to run nuxt-auth in production mode (used to encrypt data)
-  secret: config.NUXT_SECRET,
+  secret:  useRuntimeConfig().private.NUXT_SECRET,
   providers: [
     // @ts-ignore Import is exported on .default during SSR, so we need to call it this way. May be fixed via Vite at some point
     CredentialsProvider.default({
@@ -16,7 +15,7 @@ export default NuxtAuthHandler({
       async authorize(credentials: any) {
 
         const response = await $fetch(
-          `${config.STRAPI_BASE_URL}/api/auth/local/`,
+          `${useRuntimeConfig().private.STRAPI_BASE_URL}/api/auth/local/`,
           {
             method: "POST",
             body: JSON.stringify({

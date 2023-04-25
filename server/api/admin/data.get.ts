@@ -18,7 +18,7 @@ export default defineEventHandler(async (event) => {
   };
 
   const { data } = await $fetch(
-    `${config.STRAPI_BASE_URL}/api/articles`,
+    `${useRuntimeConfig().private.STRAPI_BASE_URL}/api/articles`,
     settings
   );
   return data;
